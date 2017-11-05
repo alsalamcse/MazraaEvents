@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hsarme.teya.mazraaevents.Events">
+
+    <Button
+        android:id="@+id/btjan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jan"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="7dp" />
+
+    <Button
+        android:id="@+id/btfeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/feb"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <Button
+        android:id="@+id/btmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <Button
+        android:id="@+id/btapril"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/april"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <Button
+        android:id="@+id/btmay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/may"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <Button
+        android:id="@+id/btjune"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/june"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="266dp" />
+
+    <Button
+        android:id="@+id/btjuly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/july"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <Button
+        android:id="@+id/btaug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/august"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <Button
+        android:id="@+id/btsep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/September"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <Button
+        android:id="@+id/btoct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/october" />
+
+    <Button
+        android:id="@+id/btnov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/novemberr" />
+
+    <Button
+        android:id="@+id/btndec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/decemberr" />
+
+</LinearLayout>

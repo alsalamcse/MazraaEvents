@@ -9,4 +9,19 @@
     <string name="Password">Password</string>
     <string name="phone">Phone</string>
     <string name="save">Save</string>
+    <string name="events">Events</string>
+    <string name="jan">Events in January</string>
+    <string name="feb">Events in February</string>
+    <string name="mar">Events In March</string>
+    <string name="april">Events in April</string>
+    <string name="may">Events in may</string>
+    <string name="june">Events in june</string>
+    <string name="july">events in july</string>
+    <string name="august">events in August</string>
+    <string name="September">Events in September</string>
+    <string name="october">Events in October</string>
+    <string name="november">Events In November</string>
+    <string name="december">Events in December</string>
+    <string name="novemberr">Events in November</string>
+    <string name="decemberr">Events in December</string>
 </resources>
