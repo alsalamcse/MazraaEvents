@@ -24,4 +24,24 @@
     <string name="december">Events in December</string>
     <string name="novemberr">Events in November</string>
     <string name="decemberr">Events in December</string>
+
+
+    <string name="mazraaevents">MyAndroidApp</string>
+    <string name="country_prompt">Choose a country</string>
+
+    <string-array name="month_array">
+        <item>Januray</item>
+        <item>Februray</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+
+    </string-array>
 </resources>
