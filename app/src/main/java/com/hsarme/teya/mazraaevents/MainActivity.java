@@ -7,16 +7,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnCreateContextMenuListener {
     private Spinner  spinner2;
     private Button btnSubmit;
+    private DatePicker datePicker;
+    Calendar calendar = Calendar.getInstance();
+    int year = calendar.get(Calendar.YEAR);
+    int month = calendar.get(Calendar.MONTH);
+    int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnCreateCont
         addItemsOnSpinner2();
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
+        DatePicker dp=DatePicker(getBaseContext());
+        dp.setOnDateChangedListener(year,month,day);
+
+
     }
 
     // add items into spinner dynamically
