@@ -9,19 +9,6 @@
     android:weightSum="1">
 
 
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <EditText
-            android:id="@+id/et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
