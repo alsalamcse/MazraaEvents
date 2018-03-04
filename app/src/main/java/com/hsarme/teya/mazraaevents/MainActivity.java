@@ -1,88 +1,67 @@
 package com.hsarme.teya.mazraaevents;
 
-import android.app.DatePickerDialog;
-import android.content.Intent;
+import android.content.Context;
+import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
+
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnSubmit;
-    private DatePicker datePicker;
-    Calendar calendar = Calendar.getInstance();
-    int year = calendar.get(Calendar.YEAR);
-    int month = calendar.get(Calendar.MONTH);
-    int day = calendar.get(Calendar.DAY_OF_MONTH);
-    private EditText et;
+public class MainActivity extends AppCompatActivity
+{
+    CompactCalendarView compactCalendar;
+    private SimpleDateFormat dateFormatMonth=new SimpleDateFormat("MMM,YYY", Locale.getDefault());
+
+
+
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        et = (EditText) findViewById(R.id.et);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        final ActionBar actionBar=getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setTitle(null);
 
+        compactCalendar=(CompactCalendarView) findViewById(R.id.compactcalendar_view);
+        compactCalendar.setUseThreeLetterAbbreviation(true);
+        //set an event
+        Event ev1=new Event(Color.RED,1477054800000L,"Event");
+        compactCalendar.addEvent(ev1);
+
+
+        compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                Context context = getApplicationContext();
+
+                if (dateClicked.toString().compareTo("Sun Mar 4 09:34:00 Ast 2018")== 0 )
+                {
+                    Toast.makeText(context,"Event ",Toast.LENGTH_SHORT).show();
+
+                }
+            }
 
             @Override
-            public void onClick(View view) {
-                String day = "Event = " + datePicker.getDayOfMonth();
-                Toast.makeText(getApplicationContext(), day + "\n", Toast.LENGTH_LONG).show();
+            public void onMonthScroll(Date firstDayOfNewMonth) {
 
             }
         });
-
-
-    }
-
-    DatePickerDialog.OnDateSetListener date = new
-            DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker datePicker, int day, int month, int year) {
-                    calendar.set(Calendar.DAY_OF_MONTH, day);
-                    calendar.set(Calendar.MONTH, month);
-                    calendar.set(Calendar.YEAR, year);
-                    updateLabel();
-
-
-                }
-
-            };
-
-
-    public void onClick(View v) {
-
-        new DatePickerDialog(MainActivity.this, date, calendar
-                .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)).show();
-
-                private void updateLabel()
-    {
-                    String myFormat = "MM/dd/yy"; //In which you need put here
-                    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-                    et.setText(sdf.format(calendar.getTime()));
-                }
-
-
-
 }
+}
+
+
+
 
 
 
