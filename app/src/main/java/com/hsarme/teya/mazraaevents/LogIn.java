@@ -28,6 +28,12 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
+        if (firebaseUser != null || firebaseUser.getEmail().length()==0)
+        {
+
+        }
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnIn = (Button) findViewById(R.id.btnIn);
@@ -36,6 +42,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View view) {
                 Intent i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
+              //  dataHandler();
             }
         });
 
@@ -47,8 +54,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
                 startActivity(i);
             }
         });
-        auth = FirebaseAuth.getInstance();
-        firebaseUser = auth.getCurrentUser();
+
     }
 
     private void dataHandler()

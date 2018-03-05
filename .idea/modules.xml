@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Mazra'aEvents.iml" filepath="$PROJECT_DIR$/Mazra'aEvents.iml" />
       <module fileurl="file://$PROJECT_DIR$/MazraaEvents.iml" filepath="$PROJECT_DIR$/MazraaEvents.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
