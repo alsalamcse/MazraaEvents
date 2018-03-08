@@ -39,10 +39,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
         btnIn = (Button) findViewById(R.id.btnIn);
         btnIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), MainActivity.class);
-                startActivity(i);
-              //  dataHandler();
+            public void onClick(View view) {;
+              dataHandler();
             }
         });
 
@@ -57,55 +55,43 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-    private void dataHandler()
-    {
-        String stemail=etEmail.getText().toString();
-        String stPaswword=etPassword.getText().toString();
-        boolean isOk= true;
-        if(stemail.length()==0|| stemail.indexOf('@')<1)
-        {
-            etEmail.setError("wrong email");
-            isOk=false;
-        }
-        if (stPaswword.length()<8)
-        {
-            etPassword.setError("bad password");
-            isOk=false;
-        }
-        if (isOk)
-        {
-            creatAcount(stemail,stPaswword);
-
-        }
-    }
-
-
-    private void creatAcount(String stemail, String stPaswword) {
-        auth.createUserWithEmailAndPassword(stemail,stPaswword).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
 
 
 
+
+
+
+
+    private void signIn(String email, String passw) {
+        auth.signInWithEmailAndPassword(email, passw).addOnCompleteListener(LogIn.this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(LogIn.this, "Authentication Successful.", Toast.LENGTH_SHORT).show();
-
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LogIn.this, "signIn Successful.", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(LogIn.this, MainActivity.class);
+                    startActivity(i);
                     finish();
-                }
-                else
-                {
-                    Toast.makeText(LogIn.this, "Authentication failed."+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LogIn.this, "signIn failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
                 }
             }
         });
-        FirebaseAuth.getInstance().signOut();
+    }
 
-
+    private void dataHandler() {
+        String stemail = etEmail.getText().toString();
+        String stpassword = etPassword.getText().toString();
+        signIn(stemail, stpassword);
 
     }
+
+
+
+
+
+
+
 
     @Override
     public void onClick(View view) {

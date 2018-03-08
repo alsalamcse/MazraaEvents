@@ -28,6 +28,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         etemail=(EditText)findViewById(R.id.etemail);
         etpassword=(EditText)findViewById(R.id.etpassword);
         etPhone=(EditText)findViewById(R.id.etPhone);
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
         btnsave=(Button) findViewById(R.id.btnsave);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +38,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
             }
         });
-        auth = FirebaseAuth.getInstance();
-        firebaseUser = auth.getCurrentUser();
+
+
+
 
     }
     private void dataHandler()
