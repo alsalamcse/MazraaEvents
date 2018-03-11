@@ -19,6 +19,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity
 {
 
+
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
