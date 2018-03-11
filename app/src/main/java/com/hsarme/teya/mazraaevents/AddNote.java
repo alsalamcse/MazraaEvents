@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.hsarme.teya.mazraaevents.data.Note;
+
 public class AddNote extends AppCompatActivity {
 
     private EditText etNote;
@@ -19,6 +23,7 @@ public class AddNote extends AppCompatActivity {
         btSent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dataHandler();
 
             }
         });
@@ -27,10 +32,20 @@ public class AddNote extends AppCompatActivity {
 
 
     }
+
+
+
+
+
     public void dataHandler()
     {
         String stnote=etNote.getText().toString();
 
 
     }
+    FirebaseAuth auth=FirebaseAuth.getInstance();// to get user email.. user info
+    FirebaseUser user=auth.getCurrentUser();
+    String email=user.getEmail();
+
+
 }
