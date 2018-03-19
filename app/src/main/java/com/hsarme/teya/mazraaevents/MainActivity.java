@@ -1,14 +1,21 @@
 package com.hsarme.teya.mazraaevents;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.hsarme.teya.mazraaevents.data.Note;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +29,10 @@ public class MainActivity extends AppCompatActivity
 
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth=new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+    private ImageButton btnAdd;
+
+
+
 
 
 
@@ -32,6 +43,29 @@ public class MainActivity extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        btnAdd=(ImageButton)findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getBaseContext(),AddNote.class);
+                startActivity(i);
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
         final ActionBar actionBar=getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setTitle(null);

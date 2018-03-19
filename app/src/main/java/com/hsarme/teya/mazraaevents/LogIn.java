@@ -30,9 +30,15 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_log_in);
         auth = FirebaseAuth.getInstance();
         firebaseUser = auth.getCurrentUser();
-        if (firebaseUser != null || firebaseUser.getEmail().length()==0)
+        if (firebaseUser != null && firebaseUser.getEmail()!=null && firebaseUser.getEmail().length()==0)
         {
+                if(firebaseUser.getEmail().equals("maraz@maraz.mar")){///mngr
 
+                }
+                else// alnas
+                {
+
+                }
         }
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -68,9 +74,16 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(LogIn.this, "signIn Successful.", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LogIn.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
+                    if(firebaseUser.getEmail().equals("mazraa@mazraa.mar")){///mngr
+                        Intent i = new Intent(LogIn.this, MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                    else// alnas
+                    {
+
+                    }
+
                 } else {
                     Toast.makeText(LogIn.this, "signIn failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
