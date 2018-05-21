@@ -20,6 +20,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Events" />
         <activity android:name=".AddNote"></activity>
+        <activity android:name=".AlnasMainActivity"/>
     </application>
 
 </manifest>

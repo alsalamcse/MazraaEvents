@@ -32,7 +32,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
         firebaseUser = auth.getCurrentUser();
         if (firebaseUser != null && firebaseUser.getEmail()!=null && firebaseUser.getEmail().length()==0)
         {
-                if(firebaseUser.getEmail().equals("maraz@maraz.mar")){///mngr
+                if(firebaseUser.getEmail().equals("mazraa@mazraa.mar")){///mngr
 
                 }
                 else// alnas
@@ -81,6 +81,9 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
                     }
                     else// alnas
                     {
+                        Intent i = new Intent(LogIn.this, AlnasMainActivity.class);
+                        startActivity(i);
+                        finish();
 
                     }
 
