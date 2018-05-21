@@ -1,5 +1,7 @@
 package com.hsarme.teya.mazraaevents.data;
 
+import java.util.Date;
+
 /**
  * Created by user on 11/03/2018.
  */
@@ -8,6 +10,7 @@ public class Note
 
 {
     private String notes;
+    private Date date;
 
     private String keyId;
 
@@ -30,6 +33,14 @@ public class Note
 
     public void setKeyId(String keyId) {
         this.keyId = keyId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
