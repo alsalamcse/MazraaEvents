@@ -35,4 +35,4 @@ public class NoteAdapter extends ArrayAdapter<Note> {
 
     }
 }
-}
+
