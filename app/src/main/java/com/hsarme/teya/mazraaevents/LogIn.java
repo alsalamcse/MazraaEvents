@@ -33,10 +33,15 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
         if (firebaseUser != null && firebaseUser.getEmail()!=null && firebaseUser.getEmail().length()==0)
         {
                 if(firebaseUser.getEmail().equals("mazraa@mazraa.mar")){///mngr
+                    Intent i =new Intent(getBaseContext(),MainActivity.class);
+                    startActivity(i);
 
                 }
                 else// alnas
                 {
+                    Intent i =new Intent(getBaseContext(),AlnasMainActivity.class);
+                    startActivity(i);
+
 
                 }
         }

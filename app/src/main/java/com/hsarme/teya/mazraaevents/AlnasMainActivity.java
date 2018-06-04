@@ -110,9 +110,9 @@ public class AlnasMainActivity extends AppCompatActivity
     }
     private void readAndListen()
     {
-        FirebaseAuth auth = FirebaseAuth.getInstance();// to get user email.. user info
-        FirebaseUser user = auth.getCurrentUser();
-        String email = user.getEmail();
+//        FirebaseAuth auth = FirebaseAuth.getInstance();// to get user email.. user info
+//        FirebaseUser user = auth.getCurrentUser();
+        String email ="mazraa@mazraa.mar";
         email = email.replace('.', '*');
         DatabaseReference reference;// 3nwan entrnet
         //todo לקבלת קישט=ור למסך הניתונים שלנו
@@ -122,7 +122,7 @@ public class AlnasMainActivity extends AppCompatActivity
         // 8. add completeListener to check if the insertion done
 
         //// todo בפעם הראשונה שמופעל המאזין מרבלים בעתק לכל הנתונים תחת כתובת זו
-        reference.child(email).child("my list").addValueEventListener(new ValueEventListener()
+        reference.child(email).child("myNote").addValueEventListener(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) //// todo העתק מהנותנים שהורדנו

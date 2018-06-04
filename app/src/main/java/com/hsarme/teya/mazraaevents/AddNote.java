@@ -74,6 +74,7 @@ public class AddNote extends AppCompatActivity {
             {
                 if (task.isSuccessful()){
                     Toast.makeText(AddNote.this, "Add Note Successfully", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else
                     {

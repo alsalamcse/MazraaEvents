@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        choosedDate=Calendar.getInstance().getTime();//altare5 el7ali
         btnAdd = (ImageButton) findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 Context context = getApplicationContext();
                 choosedDate = dateClicked;
+                readAndListen();// kol ma a5tar tare5 lazm y2rahn kman mra
                 if (dateClicked.compareTo(date) == 0) {
                     Toast.makeText(context, "Teacher Day ", Toast.LENGTH_SHORT).show();
 
@@ -146,17 +147,19 @@ public class MainActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference();
         // 8. add completeListener to check if the insertion done
 
+        //todo orderByChild("month").equalTo(choosedDate.getMonth())
         //// todo בפעם הראשונה שמופעל המאזין מרבלים בעתק לכל הנתונים תחת כתובת זו
-        reference.child(email).child("my list").addValueEventListener(new ValueEventListener() {
+        reference.child(email).child("myNote").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) //// todo העתק מהנותנים שהורדנו
             {
                 noteAdapter.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Note n = ds.getValue(Note.class);
-                    EventObject notes;
-                    Log.d("SL", n.toString());
-                    noteAdapter.add(n);
+                    if (n.getDate().getMonth()==choosedDate.getMonth()&& n.getDate().getDay()==choosedDate.getDay()&& n.getDate().getYear()==choosedDate.getYear()) {
+                        Log.d("SL", n.toString());
+                        noteAdapter.add(n);
+                    }
 
                 }
 
